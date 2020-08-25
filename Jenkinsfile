@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             agent { 
-                label 'dev-setup'
+                label 'dev-server'
             }
             when { 
               branch 'jenkins-setup' 
