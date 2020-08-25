@@ -18,7 +18,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying....'
-                sh 'ifconfig'
+                sh 'ip a'
             }
         }
     }
