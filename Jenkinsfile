@@ -1,17 +1,28 @@
 pipeline {
-  agent any
-  stages {
-    stage('Test') {
-      steps {
-        echo 'This is Test'
-      }
-    }
+    agent any
 
-    stage('Build') {
-      steps {
-        echo 'Test Build'
-      }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            agent { 
+                label 'dev-setup'
+            }
+            when { 
+              branch 'jenkins-setup' 
+            }
+            steps {
+                echo 'Deploying....'
+                sh 'ifconfig'
+            }
+        }
     }
-
-  }
 }
