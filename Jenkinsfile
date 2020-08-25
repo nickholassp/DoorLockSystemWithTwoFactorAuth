@@ -18,7 +18,10 @@ pipeline {
             }
             steps {
                 echo 'Deploying....'
-                sh 'ip a'
+                sh '''
+                echo "Deployingssss..."
+                ls -l
+                '''
             }
         }
     }
