@@ -16,9 +16,6 @@ pipeline {
             agent { 
                 label 'dev-server'
             }
-            when { 
-              branch 'jenkins-setup' 
-            }
             steps {
                 echo 'Deploying....'
                 sh 'ifconfig'
